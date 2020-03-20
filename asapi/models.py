@@ -18,9 +18,9 @@ class ASUser(models.Model):
 
 
 class Team(models.Model):
-    team_gid = models.IntegerField()
+    team_gid = models.BigIntegerField()
     title = models.CharField(max_length=50, db_index=True, verbose_name='Название команды')
-    member_list = models.ManyToManyField('ASUser', verbose_name='Список участников')
+    member_list = models.ManyToManyField('ASUser', blank=True, verbose_name='Список участников')
 
     class Meta:
         verbose_name = 'Команда'
@@ -34,15 +34,18 @@ class Team(models.Model):
         r = requests.get(team_user_list, headers=headers)
         data = json.loads(r.text)
         team_list = []
-        for t in data['data']:
-            team_list.append(t['gid'])
+        try:
+            for t in data['data']:
+                team_list.append(t['gid'])
+        except:
+            team_list = []
         super(Team, self).save(*args, **kwargs)
         user = ASUser.objects.filter(as_user_gid__in=team_list)
         self.member_list.add(*user)
 
 
 class Project(models.Model):
-    project_gid = models.IntegerField(blank=True, null=True)
+    project_gid = models.BigIntegerField(blank=True, null=True)
     name = models.CharField(max_length=100, db_index=True, verbose_name='Имя проекта')
     member_list = models.ManyToManyField('ASUser', verbose_name='Список участников')
 
@@ -98,7 +101,7 @@ class Project(models.Model):
 
 
 class Tasks(models.Model):
-    task_gid = models.IntegerField(blank=True)
+    task_gid = models.BigIntegerField(blank=True)
     project = models.ForeignKey('Project', on_delete=models.CASCADE, verbose_name='Проект')
     description = models.TextField(max_length=5000, verbose_name='Описание задачи')
     task_completion = models.DateField(verbose_name='Дата завершения')
@@ -159,7 +162,7 @@ class Tasks(models.Model):
 
 
 class AccesToken(models.Model):
-    token = models.CharField(max_length=50, verbose_name='Токен доступа')
+    token = models.CharField(max_length=200, verbose_name='Токен доступа')
     active_token = models.BooleanField(verbose_name='Активный токен')
 
     class Meta:
@@ -176,7 +179,7 @@ project_list_url = base_url + 'projects/'
 
 try:
     token = AccesToken.objects.get(active_token=True)
-    bearerToken = 'Bearer ' + token.token
+    bearerToken = 'Bearer ' + str(token.token)
 except:
     token = ''
     bearerToken = 'Bearer ' + token

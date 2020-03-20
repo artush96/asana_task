@@ -1,7 +1,7 @@
 import json
 
 import requests
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Team, ASUser, headers
 
 
@@ -13,7 +13,7 @@ def get_users(request):
     user_url = 'https://app.asana.com/api/1.0/teams/' + str(team.team_gid) + '/users'
     r = requests.get(user_url, headers=headers)
     data = json.loads(r.text)
-
+    print(data)
 
     for user in data['data']:
         ASUser.objects.create(
@@ -24,7 +24,7 @@ def get_users(request):
         a = a + 1
         if a == 3:
             break
-    return render(request, 'base.html')
+    return redirect('home_url')
 
 
 

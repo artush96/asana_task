@@ -11,8 +11,6 @@ services:
         - POSTGRES_NAME=postgres
   web:
     build: .
-    command: python manage.py makemigrations
-    command: python manage.py migrate
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/asana_task
