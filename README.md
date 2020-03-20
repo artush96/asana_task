@@ -18,6 +18,12 @@
 2. добавить Команда (Team gid и Название команды нужно взять из сайта асана)
 ![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/kamanda.png)
 ![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/gid_i_name_kamandi.png)
+3. перезагрузить Docker
+4. открыт в броузере 0.0.0.0.8000 и кликать Get Users (добавляет все пользователи из каманды)
+![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/get_users.png)
+5. дабавить, изменить и удалить проект
+6. дабавить, изменить и удалить задачи
+
 
 
 
