@@ -2,15 +2,16 @@
 
 # Документация
 
-git clone https://github.com/artush96/asana_task.git
-cd asana_task
+`git clone https://github.com/artush96/asana_task.git`
 
-1. docker-compose up
-2. docker ps
-3. docker exec -t -i "id asana_task" bash
-4. ./manage.py makemigrations
-5. ./manage.py migrate
-6. ./manage.py createsuperuser и создать логин и пароль
+`cd asana_task`
+
+1. `docker-compose up`
+2. `docker ps`
+3. `docker exec -t -i "id asana_task" bash`
+4. `./manage.py makemigrations`
+5. `./manage.py migrate`
+6. `./manage.py createsuperuser` и создать логин и пароль
 7. открыт в броузере 0.0.0.0.8000/admin
 
 # как использовать админ панель первый раз
@@ -25,17 +26,8 @@ cd asana_task
 4. открыт в броузере 0.0.0.0.8000 и кликать Get Users (добавляет все пользователи из каманды)
 ![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/get_users.png)
 5. дабавить, изменить и удалить проект
-<<<<<<< HEAD
 6. дабавить, изменить и удалить задачи
-=======
 6. дабавить, изменить и удалить задачи
 
 
 
-
-
-
-
-
-
->>>>>>> 55abbde3fa88664da70771b4a3850d35042ea793
