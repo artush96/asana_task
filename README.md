@@ -14,7 +14,10 @@
 
 1. добавить токен доступа и активировать
 ![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/token.png)
+![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/aktivacia_tokena.png)
 2. добавить Команда (Team gid и Название команды нужно взять из сайта асана)
+![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/kamanda.png)
+![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/gid_i_name_kamandi.png)
 
 
 
