@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_USER=artush
+        - POSTGRES_PASSWORD=asana_db
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/core
+    ports:
+      - "8000:8000"
+    depends_on:
+      - migration
+      - db
+  migration:
+    command: python manage.py makemigrations
+    command: python manage.py migrate
+    volumes:
+      - .:/core
+    depends_on:
+      - db
