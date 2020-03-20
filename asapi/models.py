@@ -174,7 +174,6 @@ base_url = 'https://app.asana.com/api/1.0/'
 task_url = base_url + 'tasks/'
 project_list_url = base_url + 'projects/'
 
-token = AccesToken.objects.get(active_token=True)
 try:
     token = AccesToken.objects.get(active_token=True)
     bearerToken = 'Bearer ' + token.token

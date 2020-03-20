@@ -1,7 +1,7 @@
 FROM python:3
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /task_t
-WORKDIR /task_t
-COPY req.txt /task_t/
+RUN mkdir /asana_taks
+WORKDIR /asana_taks
+COPY req.txt /asana_taks/
 RUN pip install -r req.txt
-COPY . /task_t/
+COPY . /asana_taks/

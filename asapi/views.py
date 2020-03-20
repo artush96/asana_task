@@ -16,11 +16,10 @@ def get_users(request):
 
 
     for user in data['data']:
-        u = ASUser.objects.create(
+        ASUser.objects.create(
             name=user['name'],
             as_user_gid=user['gid']
-        )
-        u.save()
+        ).save()
         a = 1
         a = a + 1
         if a == 3:
