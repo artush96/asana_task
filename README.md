@@ -2,6 +2,9 @@
 
 # Документация
 
+git clone https://github.com/artush96/asana_task.git
+cd asana_task
+
 1. docker-compose up
 2. docker ps
 3. docker exec -t -i "id asana_task" bash
