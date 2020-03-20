@@ -13,7 +13,7 @@
 # как использовать админ панель первый раз
 
 1. добавить токен доступа и активировать
-![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/images/token.png)
+![Иллюстрация к проекту](https://github.com/artush96/images/raw/master/token.png)
 2. добавить Команда (Team gid и Название команды нужно взять из сайта асана)
 
 
